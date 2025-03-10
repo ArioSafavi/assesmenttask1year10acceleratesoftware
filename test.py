@@ -2,7 +2,7 @@ import requests
 
 # NASA API Base URL
 APOD_URL = "https://api.nasa.gov/planetary/apod"
-API_KEY = "fYeMccob0p0jACCQ9qR2GUcgIm7hdhMM86IkEVcF"  # Replace with your own API key from https://api.nasa.gov/
+API_KEY = "f9UVGf15EXLQsks5QnAjP7fQZzIlX68vZ2fBfnd6"  # Replace with your own API key from https://api.nasa.gov/
 
 # Dictionary to store favorite celestial objects
 favorites = {}
