@@ -62,6 +62,7 @@
 ---
 ## Design
 #### Gantt Chart :
+![alt text](gaant_chart.png "Title")
 #### Structure Chart : 
 #### Algorithms :
 #### Data Dictionary :
