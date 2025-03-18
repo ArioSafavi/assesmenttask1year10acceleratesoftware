@@ -68,4 +68,5 @@ their information
 #### Structure Chart : 
 ![alt text](structure_chart.png "structure chart")
 #### Algorithms :
+
 #### Data Dictionary :
