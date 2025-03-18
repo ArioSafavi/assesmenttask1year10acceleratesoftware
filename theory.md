@@ -23,9 +23,10 @@
 * User Requirements
     * The user should be able to:
     1. Recieve raw data such as NeoWs from the NASA API
-    2. Make modifications such as filtering or sorting
+    2. Make modifications such as filtering or sorting and adding to lists
     3. Get astronomy pictures of the day from the API
     4. Get the Landsat and EPIC imagry from the API
+their information
 * Inputs and outputs
     * The user should be able to ask for data and the system should be able to present the data to the user.
 * Core Features
@@ -48,7 +49,7 @@
 * Preconditions
     * Internet access and API access
 * Main Flow
-    1. Ask what the user wants - (image or dataset)
+    1. Ask what the user wants - (image or data)
     2. Show the user an image or dataset
         * If user selects dataset, user edits the dataset
         * Displays edited dataset.
@@ -56,13 +57,15 @@
         * If user selects image, Show the image and information relating to the image.
         * Ask if the user wants to compare images
         * Show two images side by side for the user to compare
+        * Make a list of celstial objects and view their information
     3. Go back to the begining
 * Postconditions
     * New table, graph and dataset is stored or removed. Images are retrieved, stored, compared or removed.
 ---
 ## Design
 #### Gantt Chart :
-![alt text](gaant_chart.png "Title")
+![alt text](gaant_chart.png "Gaant chart")
 #### Structure Chart : 
+![alt text](structure_chart.png "structure chart")
 #### Algorithms :
 #### Data Dictionary :
