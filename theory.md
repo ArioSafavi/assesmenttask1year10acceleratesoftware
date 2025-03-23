@@ -68,5 +68,31 @@ their information
 #### Structure Chart : 
 ![alt text](structure_chart.png "structure chart")
 #### Algorithms :
+    BEGIN NASAAPI()
+        choice = 0
+        WHILE choice = 1
+            astroidinformation()
+        WHILE choice = 2
+            compareimages()
+    astroidinformation()
+        IF API Request Valid THAN
+                CONTINUE
+        User choice = 0
+    
+        search for celestial objects()
+            User choice = 0
+            IF user choice is 1 THAN
+                make a chart:
+                    ASK filters, conditions and ordering
+            ELSE add object to list
+                ASK object
+    compareimages()
+        IF API Request Valid THAN
+                CONTINUE
+        ASK what imagery does the user want to see EPIC LANDSAT OR APOD
+        RETURN image
+![alt text](main.png "main flowchart")        
+![alt text](astroidinformation.png "astroid information")
+![alt text](viewimage.png "Image")
 
 #### Data Dictionary :
