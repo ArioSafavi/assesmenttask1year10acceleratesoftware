@@ -6,15 +6,6 @@ import matplotlib.image as mpimg
 
 # defining sub functions
 def get_apod(date):
-    """
-    Fetches Astronomy Picture of the Day (APOD) information from NASA API.
-
-    Args:
-        date (str): The date in YYYY-MM-DD format.
-
-    Returns:
-        dict: A dictionary containing the APOD data, or None if an error occurs.
-    """
     date = input('Enter a date in this format: year-month-day (example: 2009-08-24, Press enter for today): ')
     api_key = "f9UVGf15EXLQsks5QnAjP7fQZzIlX68vZ2fBfnd6"  
     base_url = "https://api.nasa.gov/planetary/apod"
