@@ -1,28 +1,13 @@
 import requests
-# Import necessary libraries
-import earthaccess
-import os
-
 def landsat():
-    # Authenticate with Earthdata Login
-    os.environ['EARTHDATA_LOGIN'] = 'your_earthdata_username'
-    os.environ['EARTHDATA_PASSWORD'] = 'your_earthdata_password'
+    api_key = "f9UVGf15EXLQsks5QnAjP7fQZzIlX68vZ2fBfnd6"
 
-    # Define search parameters
-    collection = "LANDSAT_TM_C2"  # Example Landsat Collection
-    point = {"type": "Point", "coordinates": [-150, 30]}  # Example coordinates (longitude, latitude)
-    date_range = ["2023-01-01", "2023-01-31"]  # Example date range
+    lat = float(input("Enter the latitude of the image in North: "))
+    lon = float(input("Enter the Longitude of the image in West: "))
 
-    # Search for data
-    search = earthaccess.search(
-        collection=collection,
-        intersects=point,
-        date=date_range
-    )
-
-    # Print the results
-    print(search)
-
-    # Download the data
-    # (Note: You'll need to specify the desired output path and file format)
-    # earthaccess.download(search, output_dir="/path/to/output", format="tif")
+    url = f"https://api.nasa.gov/planetary/earth/imagery?lon={lon}&lat={lat}&dim=0.5&api_key={api_key}"
+    response = requests.get(url)
+    h = 1
+    with open(str(lat)+str(lon)+ ".png", "wb") as file:
+        file.write(response.content)
+        h = h + 1
