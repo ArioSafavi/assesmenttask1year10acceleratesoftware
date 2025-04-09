@@ -1,0 +1,16 @@
+31-03-25:
+I started working on the algorithm for the APOD portion of the project. I got help from stackoverflow to download the project. Errors such as downloading videos still existed at this time:
+01-04-25:
+Made the APOD function go on a loop
+02-04-25:
+I changed the code so that it is imported into a different python file for the UI that runs a simple loop until the user wants to break
+07-04-25:
+Documented in github
+08-04-25:
+I created the main code for the EPIC function and tested it. still alot of bugs at this point.
+08-04-25:
+Listed in github
+09-04-25:
+Listed in github
+09-04-25
+I added comments to all of the code fixed a major issue with the code that it broke whenever a wrong input was entered and I finished the theory work (also made this Document)
