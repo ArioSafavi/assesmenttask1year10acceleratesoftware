@@ -2,10 +2,11 @@
 import requests
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import json
 
 # defining sub functions
 def get_apod(date):
-    date = input('Enter a date in this format: year-month-day (example: 2009-08-24, Press enter for today): ')
+    date = input('Enter a date after 1996 in this format: year-month-day (example: 2009-08-24, Press enter for today): ')
     api_key = "f9UVGf15EXLQsks5QnAjP7fQZzIlX68vZ2fBfnd6"  
     base_url = "https://api.nasa.gov/planetary/apod"
     params = {
@@ -30,32 +31,23 @@ def get_apod(date):
 date_to_fetch = ""  
 
 def apod():
-    x = 0
-    while x == 0:
-        apod_data = get_apod(date_to_fetch)
-        if apod_data:
-            print(json.dumps(apod_data, indent=4))
-            url = apod_data['url']
-            response = requests.get(url)
+
+    apod_data = get_apod(date_to_fetch)
+    if apod_data:
+        print(json.dumps(apod_data, indent=4))
+        url = apod_data['url']
+        response = requests.get(url)
 #Getting the image
-            if apod_data["media_type"] != 'video':
+        if apod_data["media_type"] != 'video':
 
-                filename = url.split('/')[-1] 
-                with open(filename, 'wb') as file:
-                    file.write(response.content)
-                img = mpimg.imread(filename)
-                imgplot = plt.imshow(img)
-                plt.show()
-            else:
-                f = open("VideoURL.txt", "a")
-                f.write('     ' + apod_data['title']+ ' ' + url)
-                f.close()
-#Showing the image
-                
-        i = input('do you want to stop?( yes or no )')
-        if i == 'yes':
-            break
+            filename = url.split('/')[-1] 
+            with open(filename, 'wb') as file:
+                file.write(response.content)
+            img = mpimg.imread(filename)
+            imgplot = plt.imshow(img)
+            plt.show()
         else:
-            print('going again')
-
-# running all of the functions: 
+            f = open("VideoURL.txt", "a")
+            f.write('     ' + apod_data['title']+ ' ' + url)
+            f.close()
+#Showing the image

@@ -22,8 +22,11 @@ def epic():
     return most_recent_date
 
   def download(imagetype):
-    api = url_base + "api/{}/date/{}-{}-{}".format(imagetype, Year, Month, Day)
-    archive = url_base + "archive/{}/{}/{}/{}/png/".format(imagetype, Year, Month, Day)
+    try:
+      api = url_base + "api/{}/date/{}-{}-{}".format(imagetype, Year, Month, Day)
+      archive = url_base + "archive/{}/{}/{}/{}/png/".format(imagetype, Year, Month, Day)
+    except:
+      print("Didnt work: ")
     try:
       data = urlopen(api)
       jdata = json.loads(data.read())
@@ -42,17 +45,14 @@ def epic():
 
   # Start main logic
 
-  print('\nDSCOVR: Deep Space Climate Observatory \"Blue Marble\" Image Query Utility')
-
   end_date = find_most_recent_date()
   cYear  = end_date[:4]
   cMonth = end_date[4:6]
   cDay   = end_date[6:]
   formatted_end_date = '-'.join([end_date[:4], end_date[4:6], end_date[6:]])
 
-  print('The most recent images have been detected on {}'.format(pretty_date( int(cYear), int(cMonth), int(cDay) )) + '..\n')
 
-  # Ask user for dates (valid date: 20150704 thru 20190627) -> EDIT: 20190627-20200301 is unavailabe (Back online as of 2MARCH2020)
+  # Ask user for dates (valid date: 20150704 thru 20190627)
   try:
     input_date = input('Enter a date in YYYY-MM-DD format (2015-07-04 thru ' + formatted_end_date + ') (Press Enter for most recent): ')
     if ( input_date == "" ): # user hit enter - no input
@@ -66,6 +66,5 @@ def epic():
   except:
     print("Invalid Input. Exiting.")
 
-  print('\nQuerying API for images on {}'.format(pretty_date(y, m, d)) + '..\n')
   #natural
   download("natural")
